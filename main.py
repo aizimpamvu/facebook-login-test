@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
@@ -25,9 +26,10 @@ password.send_keys(PASS)
 
 time.sleep(3)
 
-login = driver.find_element(By.TAG_NAME, 'button')
-print(login.text)
-login.click()
+password.send_keys(Keys.ENTER)
+# login = driver.find_element(By.TAG_NAME, 'button')
+# print(login.text)
+# login.click()
 
 time.sleep(3)
 
