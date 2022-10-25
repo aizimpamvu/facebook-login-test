@@ -1,16 +1,14 @@
 # This is a sample Python script.
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+driver.get("https://www.facebook.com/")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+email =driver.find_element(By.ID, "email")
+email.send_keys("hallyizza200@gmail.com")
+
